@@ -31,7 +31,7 @@ resource "vault_generic_secret" "roboshop-dev" {
   "cart_url":   "http://cart-dev.rdevopsb81.online:8080/",
   "user_url":   "http://user-dev.rdevopsb81.online:8080/",
   "shipping_url":   "http://shipping-dev.rdevopsb81.online:8080/",
-  "payment_url":   "http://payment-dev.rdevopsb81.online:8080/",
+  "payment_url":   "http://payment-dev.rdevopsb81.online:8080/"
 }
 EOT
 }
