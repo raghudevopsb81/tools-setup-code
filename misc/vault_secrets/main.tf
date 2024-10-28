@@ -8,18 +8,18 @@ terraform {
 }
 
 provider "vault" {
-  address = "http://vault-internal.rdevopsb81.online:8200"
-  token   = var.vault_token
+  address         = "http://vault-internal.rdevopsb81.online:8200"
+  token           = var.vault_token
   skip_tls_verify = true
 }
 
 variable "vault_token" {}
 
 resource "vault_mount" "roboshop-dev" {
-path        = "roboshop-dev"
-type        = "kv"
-options     = { version = "2" }
-description = "RoboShop Dev Secrets"
+  path        = "roboshop-dev"
+  type        = "kv"
+  options     = { version = "2" }
+  description = "RoboShop Dev Secrets"
 }
 
 resource "vault_generic_secret" "roboshop-dev" {
@@ -27,8 +27,11 @@ resource "vault_generic_secret" "roboshop-dev" {
 
   data_json = <<EOT
 {
-  "foo":   "bar",
-  "pizza": "cheese"
+  "catalogue_url":   "http://catalogue-dev.rdevopsb81.online:8080/",
+  "cart_url":   "http://cart-dev.rdevopsb81.online:8080/",
+  "user_url":   "http://user-dev.rdevopsb81.online:8080/",
+  "shipping_url":   "http://shipping-dev.rdevopsb81.online:8080/",
+  "payment_url":   "http://payment-dev.rdevopsb81.online:8080/",
 }
 EOT
 }

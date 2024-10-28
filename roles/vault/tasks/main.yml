@@ -20,6 +20,7 @@
   ansible.builtin.systemd_service:
     name: vault
     state: restarted
+    enabled: yes
 
 
 
