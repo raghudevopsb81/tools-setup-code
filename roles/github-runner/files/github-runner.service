@@ -3,7 +3,7 @@ Description=GitHub Actions Runner (raghudevopsb81.ip-172-31-42-37)
 After=network.target
 
 [Service]
-ExecStart=/actions-runner/runsvc.sh
+ExecStart=/actions-runner/run.sh
 User=github-runner
 WorkingDirectory=/actions-runner
 KillMode=process
