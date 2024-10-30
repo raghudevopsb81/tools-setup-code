@@ -48,9 +48,9 @@ EOT
 }
 
 resource "vault_generic_secret" "user" {
-path = "${vault_mount.roboshop-dev.path}/user"
+  path = "${vault_mount.roboshop-dev.path}/user"
 
-data_json = <<EOT
+  data_json = <<EOT
 {
   "MONGO": "true",
   "MONGO_URL" : "mongodb://mongodb-dev.rdevopsb81.online:27017/users",
@@ -72,9 +72,9 @@ EOT
 }
 
 resource "vault_generic_secret" "shipping" {
-path = "${vault_mount.roboshop-dev.path}/shipping"
+  path = "${vault_mount.roboshop-dev.path}/shipping"
 
-data_json = <<EOT
+  data_json = <<EOT
 {
   "CART_ENDPOINT": "cart-dev.rdevopsb81.online:8080",
   "DB_HOST" : "mysql-dev.rdevopsb81.online",
