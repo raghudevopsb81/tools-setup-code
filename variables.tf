@@ -7,6 +7,12 @@ variable "tools" {
       instance_type = "t3.small"
     }
 
+    github-runner = {
+      port          = 80 # Just a dummy port
+      volume_size   = 20
+      instance_type = "t3.small"
+    }
+
   }
 }
 
