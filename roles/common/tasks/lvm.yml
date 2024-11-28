@@ -5,7 +5,7 @@
 - name: Increase LVM
   ansible.builtin.shell: lvextend -r -L {{item.size}}G /dev/mapper/RootVG-{{item.lv}}
   loop: "{{ lv_input }}"
-
+  ignore_errors: yes
 
 
 
