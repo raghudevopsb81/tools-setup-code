@@ -79,7 +79,7 @@
 
 - name: Install Docker
   ansible.builtin.shell: |
-    curl -O /etc/yum.repos.d/docker.repo https://download.docker.com/linux/rhel/docker-ce.repo
+    curl -o /etc/yum.repos.d/docker.repo https://download.docker.com/linux/rhel/docker-ce.repo
     dnf install docker-ce --nobest -y
     usermod -a -G ec2-user
     systemctl enable docker
