@@ -78,9 +78,12 @@
     state: installed
 
 - name: Install Docker
-  ansible.builtin.dnf:
-    name: docker
-    state: installed
+  ansible.builtin.shell: |
+    curl -O /etc/yum.repos.d/docker.repo https://download.docker.com/linux/rhel/docker-ce.repo
+    dnf install docker-ce --nobest -y
+    usermod -a -G ec2-user
+    systemctl enable docker
+    systemctl start docker
 
 - name: LVM Layout
   ansible.builtin.include_role:
