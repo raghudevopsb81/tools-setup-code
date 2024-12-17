@@ -16,6 +16,17 @@ resource "aws_security_group" "sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  dynamic "ingress" {
+    for_each = var.sg_port
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "TCP"
+      cidr_blocks = ["0.0.0.0/0"]
+      description = ingress.key
+    }
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
