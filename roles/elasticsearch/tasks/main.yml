@@ -28,6 +28,9 @@
     - elasticsearch
     - kibana
     - logstash
+    - nginx
+
+
 
 
 
