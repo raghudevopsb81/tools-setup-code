@@ -1,0 +1,12 @@
+- name: Set Prompt
+  ansible.builtin.shell: set-prompt {{ tool_name }}
+
+- name: Copy Elastic repo file
+  ansible.builtin.copy:
+    src: elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo
+
+
+
+
+
