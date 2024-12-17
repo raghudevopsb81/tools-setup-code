@@ -11,6 +11,12 @@
     name: elasticsearch
     state: installed
 
+- name: Start ElasticSearch
+  ansible.builtin.systemd_service:
+    name: elasticsearch
+    state: started
+
+
 
 
 
