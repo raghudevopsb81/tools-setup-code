@@ -28,6 +28,15 @@ variable "tools" {
       policy_list = []
     }
 
+    sonarqube = {
+      port          = {
+        sonarqube  = 9000
+      }
+      volume_size   = 20
+      instance_type = "t3.large"
+      policy_list = ["*"]
+    }
+
   }
 }
 
